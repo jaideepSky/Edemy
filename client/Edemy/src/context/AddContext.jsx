@@ -4,6 +4,9 @@ export const AppContext = createContext({
      allCourses : [],
      fetchAllCourses : ()=>{},
      isEducator:false,
+     calculateChapterTime: ()=>{},
+     calculateCourseDuration: ()=>{},
+     totalLectures : ()=>{},
    
 })
 

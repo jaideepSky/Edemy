@@ -5,6 +5,7 @@ import Navbar from "./components/student/Navbar.jsx";
 import { Outlet, useMatch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { dummyCourses } from "./assets/assets.js";
+import humanizeDuration from 'humanize-duration'
 
 function App() {
 
@@ -18,10 +19,41 @@ function App() {
     fetchAllCourses()
   },[])
 
+  const calculateChapterTime = (chapter)=>{
+    let time  = 0 
+    chapter.chapterContent.map((lecture)=>{
+        return time += lecture.lectureDuration
+    })
+    return humanizeDuration(time * 60 * 1000 , {units : ['h' , 'm']})
+
+  }
+
+  const calculateCourseDuration =(course)=>{
+    let totalDuration = 0 
+    course.courseContent.map((chapter)=>{
+     return  chapter.chapterContent.map((lecture)=>{
+          return totalDuration += lecture.lectureDuration
+       })
+      })
+        return humanizeDuration(totalDuration * 60 * 1000 , {units : ['h' , 'm']})
+  }
+
+  const totalLectures = (course)=>{
+    let totalLectures = 0
+    course.courseContent.map((chapter)=>{
+      if(Array.isArray(chapter.chapterContent)){
+        return totalLectures += chapter.chapterContent.length
+
+      }
+
+    })
+    return totalLectures
+  }
+
   const [isEducator , setIsEducator] = useState(false)
   return (
     <>
-      <AppContextProvider value={{allCourses , fetchAllCourses , isEducator }}>
+      <AppContextProvider value={{allCourses , fetchAllCourses , isEducator , calculateChapterTime ,calculateCourseDuration , totalLectures }}>
         <div className="text-default min-h-screen bg-white">
           {!isEducatorRoute && <Navbar />}
         <Outlet />
