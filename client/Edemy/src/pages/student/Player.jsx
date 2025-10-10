@@ -2,9 +2,14 @@ import React from 'react'
 
 function Player() {
   return (
+   <>
     <div>
-        <h1>Player page </h1>
+      {/* left coloumn */}
+      <div></div>
+      {/* right coloumn */}
+      <div></div>
     </div>
+   </>
   )
 }
 

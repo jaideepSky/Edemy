@@ -58,7 +58,7 @@ function CourseList() {
               })}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,8 @@ export const AppContext = createContext({
      calculateChapterTime: ()=>{},
      calculateCourseDuration: ()=>{},
      totalLectures : ()=>{},
+     enrolCourse : [],
+     fetchEnrolledCourses : ()=>{},
    
 })
 
