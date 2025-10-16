@@ -9,13 +9,13 @@ import YouTube from "react-youtube";
 function CourseDetail() {
   const { id } = useParams();
   console.log(id);
-  const [courseData, setCourseData] = useState(null);
   const {
     allCourses,
     calculateChapterTime,
     calculateCourseDuration,
     totalLectures,
   } = useAppContext();
+  const [courseData, setCourseData] = useState(null);
   const [openChapterIndex, setOpenChapterIndex] = useState({});
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false);
   const [previewLecture, setPreviewLecture] = useState(null);

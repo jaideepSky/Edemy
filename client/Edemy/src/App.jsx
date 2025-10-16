@@ -9,7 +9,7 @@ import humanizeDuration from "humanize-duration";
 
 function App() {
   const isEducatorRoute = useMatch("/educator/*");
-  const [isEducator, setIsEducator] = useState(false);
+  const [isEducator, setIsEducator] = useState(true);
 
   const [allCourses, setAllCourses] = useState([]);
   const [enrolCourse,setEnrollCourse] = useState([])

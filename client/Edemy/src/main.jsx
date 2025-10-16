@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       element:<Educator/>,
       children:[
         {
-          path:'educator',
+          path:'dashboard',
           element:<Dashboard/>
         },
         {
