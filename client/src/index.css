@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@tailwind utilities;
+
+*{
+    font-family: Outfit;
+}
+
+/* Rich text styles */
+.rich-text {
+    font-size: 15px;
+    color: #7A7B7D;
+    width: 100%;
+}
+
+.rich-text p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.rich-text h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #252525;
+    margin: 32px 0;
+    line-height: 1.2;
+}
+
+.rich-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #252525;
+    margin: 24px 0;
+    line-height: 1.3;
+}
+
+.rich-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    margin: 20px 0;
+    line-height: 1.4;
+}
+
+.rich-text h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444444;
+    margin: 16px 0;
+}
+
+.rich-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+    margin: 12px 0;
+}
+
+.rich-text h6 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    margin: 8px 0;
+}
+
+.rich-text strong {
+    font-weight: 700;
+}
+
+.rich-text ol {
+    margin-left: 30px;
+    list-style-type: decimal;
+    margin-bottom: 16px;
+}
+
+.rich-text ul {
+    margin-left: 30px;
+    list-style-type: disc;
+    margin-bottom: 16px;
+}
+
+.rich-text li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.rich-text a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.rich-text a:hover {
+    color: #1d4ed8;
+}
+
+.rich-text blockquote {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 16px;
+    margin: 16px 0;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.rich-text pre {
+    background-color: #f3f4f6;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.rich-text code {
+    font-family: monospace;
+    background-color: #f3f4f6;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+    border-radius: 8px;
+}
+
+.rich-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.rich-text th,
+.rich-text td {
+    border: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.rich-text th {
+    background-color: #f9fafb;
+    font-weight: 600;
+}

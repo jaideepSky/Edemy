@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jaideepSky/Edemy#readme",
+  "bugs": {
+    "url": "https://github.com/jaideepSky/Edemy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaideepSky/Edemy.git"
+  },
+  "license": "ISC",
+  "author": "jaideep sigh",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@clerk/express": "^1.7.42",
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "stripe": "^19.1.0",
+    "svix": "^1.42.0"
+  }
+}
