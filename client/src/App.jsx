@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { dummyCourses } from "./assets/assets.js";
 import humanizeDuration from "humanize-duration";
 import "quill/dist/quill.snow.css";
+import { useAuth , useUser} from "@clerk/clerk-react";
 
 function App() {
   const isEducatorRoute = useMatch("/educator/*");
@@ -14,6 +15,9 @@ function App() {
 
   const [allCourses, setAllCourses] = useState([]);
   const [enrolCourse,setEnrollCourse] = useState([])
+
+  const {getToken} = useAuth()
+  const {user} = useUser()
 
   const fetchAllCourses = async () => {
     setAllCourses(dummyCourses);
@@ -56,6 +60,15 @@ function App() {
     return totalLectures;
   };
 
+    const logToken = async ()=>{
+        console.log(await getToken())
+    }
+  useEffect(()=>{
+    if(user){
+      logToken()
+
+    }
+  },[user])
 
 
   return (
@@ -70,6 +83,8 @@ function App() {
           totalLectures,
           enrolCourse,
           fetchEnrolledCourses,
+          getToken,
+          user,
           
         }}
       >

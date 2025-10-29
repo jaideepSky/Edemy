@@ -9,6 +9,9 @@ export const AppContext = createContext({
      totalLectures : ()=>{},
      enrolCourse : [],
      fetchEnrolledCourses : ()=>{},
+     getToken : '',
+     user : null,
+
    
 })
 

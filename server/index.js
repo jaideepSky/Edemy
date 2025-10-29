@@ -3,6 +3,9 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import { connectDB } from './config/database.js'
 import clerkWebhooks from './controllers/webhooks.js'
+import educatorRouter from './routes/educator.route.js'
+import { clerkMiddleware } from '@clerk/express'
+import connectCloudinary from './config/cloudinary.js'
 
 dotenv.config({
     path : './.env'
@@ -17,6 +20,11 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors({credentials : true}));
+app.use(clerkMiddleware())
+
+// Connect to DataBase !! 
+ connectDB()
+ connectCloudinary()
 
 // Routes
 app.get('/', (req,res)=>{
@@ -24,9 +32,9 @@ app.get('/', (req,res)=>{
 })
 
 app.post('/clerk', express.json(),clerkWebhooks)
+app.use('/api/educator',express.json(),educatorRouter)
 
-// Connect to DataBase !! 
- connectDB()
+
 
 app.listen(port , ()=>{
     console.log(`Server is listen at ${port} port!`)
